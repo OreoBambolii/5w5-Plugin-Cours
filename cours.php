@@ -39,15 +39,17 @@ add_action('wp_enqueue_scripts', 'cours_enqueue');
 
 function creation_cours(){
     $contenu = '
-    <div class="menu-cours">
-        <button class="session1">Session 1</button>
-        <button class="session2">Session 2</button>
-        <button class="session3">Session 3</button>
-        <button class="session4">Session 4</button>
-        <button class="session5">Session 5</button>
-        <button class="session6">Session 6</button>
-    </div>
-    <div class="paragraphe"></div>';
+    <section class="section-cours">
+        <div class="menu-cours">
+            <button class="session1">Session 1</button>
+            <button class="session2">Session 2</button>
+            <button class="session3">Session 3</button>
+            <button class="session4">Session 4</button>
+            <button class="session5">Session 5</button>
+            <button class="session6">Session 6</button>
+        </div>
+        <div class="paragraphe"></div>
+    </section>';
     return $contenu;
 }
 

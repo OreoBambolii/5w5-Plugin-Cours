@@ -1,29 +1,34 @@
-.menu-cours {
+.section-cours {
     display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
+    column-gap: 5rem;
 
-    .session1, .session2, .session3, .session4, .session5, .session6 {
+    .menu-cours {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        .session1, .session2, .session3, .session4, .session5, .session6 {
+            color: #C4E7D4;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: bold;
+
+            padding: 0.3rem;
+            border: 1px solid #030027;
+            background-color: #030027;
+
+            transform: scale(1);
+            transition: transform 0.3s;
+        }
+
+        .session1:hover, .session2:hover, .session3:hover, .session4:hover, .session5:hover, .session6:hover {
+            border: 1px solid #2274A5;
+            background-color: #2274A5;
+            color: #030027;
+            scale: (1.1);
+        }
+    }
+
+    .afficher {
         color: #C4E7D4;
-        font-family: 'Work Sans', sans-serif;
-        font-weight: bold;
-
-        padding: 0.3rem;
-        border: 1px solid #030027;
-        background-color: #030027;
-
-        transform: scale(1);
-        transition: transform 0.3s;
     }
-
-    .session1:hover, .session2:hover, .session3:hover, .session4:hover, .session5:hover, .session6:hover {
-        border: 1px solid #2274A5;
-        background-color: #2274A5;
-        color: #030027;
-        scale: (1.1);
-    }
-}
-
-.session1P {
-    color: #C4E7D4;
 }

@@ -1,9 +1,13 @@
-.menu-cours {
+.section-cours {
+  display: flex;
+  column-gap: 5rem;
+}
+.section-cours .menu-cours {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
 }
-.menu-cours .session1, .menu-cours .session2, .menu-cours .session3, .menu-cours .session4, .menu-cours .session5, .menu-cours .session6 {
+.section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
   color: #C4E7D4;
   font-family: "Work Sans", sans-serif;
   font-weight: bold;
@@ -13,13 +17,12 @@
   transform: scale(1);
   transition: transform 0.3s;
 }
-.menu-cours .session1:hover, .menu-cours .session2:hover, .menu-cours .session3:hover, .menu-cours .session4:hover, .menu-cours .session5:hover, .menu-cours .session6:hover {
+.section-cours .menu-cours .session1:hover, .section-cours .menu-cours .session2:hover, .section-cours .menu-cours .session3:hover, .section-cours .menu-cours .session4:hover, .section-cours .menu-cours .session5:hover, .section-cours .menu-cours .session6:hover {
   border: 1px solid #2274A5;
   background-color: #2274A5;
   color: #030027;
   scale: 1.1;
 }
-
-.session1P {
+.section-cours .afficher {
   color: #C4E7D4;
 }/*# sourceMappingURL=style.css.map */
