@@ -34,7 +34,7 @@
 }
 .section-cours .contenu .article {
   border: 1px solid #C4E7D4;
-  padding: 0rem 0.5rem;
+  padding: 0rem 1rem 0.5rem 1rem;
   margin: 0.5rem 0rem;
 }
 .section-cours .contenu .article h5 {
@@ -50,7 +50,4 @@
 .section-cours .contenu .article p {
   margin: 0;
   padding: 0.5rem 0rem;
-}
-.section-cours .afficher {
-  color: #C4E7D4;
 }/*# sourceMappingURL=style.css.map */

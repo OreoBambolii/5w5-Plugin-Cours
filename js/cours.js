@@ -28,7 +28,7 @@
         titre = article.title.rendered;
         //console.log(titre);
 
-        afficherCoursSession1();
+        afficherCoursSession(4);
       });
     })
     .catch(function (error) {
@@ -37,6 +37,11 @@
     });
 
   let btnSession1 = document.querySelector('.session1');
+  let btnSession2 = document.querySelector('.session2');
+  let btnSession3 = document.querySelector('.session3');
+  let btnSession4 = document.querySelector('.session4');
+  let btnSession5 = document.querySelector('.session5');
+  let btnSession6 = document.querySelector('.session6');
   let divCours = document.querySelector('.contenu');
   /*let lesCours;
 
@@ -49,13 +54,33 @@
   }*/
 
   btnSession1.addEventListener("click", function(){
-    afficherCoursSession1();
+    afficherCoursSession(4);
   })
 
-  function afficherCoursSession1() {
-    let urlSession1 = "http://localhost:8080/5w5/wp-json/wp/v2/posts?categories=4";
+  btnSession2.addEventListener("click", function(){
+    afficherCoursSession(9);
+  })
+
+  btnSession3.addEventListener("click", function(){
+    afficherCoursSession(11);
+  })
+
+  btnSession4.addEventListener("click", function(){
+    afficherCoursSession(13);
+  })
+
+  btnSession5.addEventListener("click", function(){
+    afficherCoursSession(14);
+  })
+
+  btnSession6.addEventListener("click", function(){
+    afficherCoursSession(15);
+  })
+
+  function afficherCoursSession(id) {
+    let urlSession = "http://localhost:8080/5w5/wp-json/wp/v2/posts?categories=" + id;
   
-    fetch(urlSession1)
+    fetch(urlSession)
       .then(response => response.json())
       .then(data => {
         // Clear the articleContainer
@@ -63,17 +88,17 @@
   
         // Loop through the data and create article elements
         data.forEach(article => {
-          const coursSession1 = document.createElement("div");
-          coursSession1.className = "article";
-          coursSession1.innerHTML = `
+          const coursSession = document.createElement("div");
+          coursSession.className = "article";
+          coursSession.innerHTML = `
             <h4>${article.title.rendered}</h4>
             <div class="ligne"></div>
             <div>${article.content.rendered}</div>
           `;
-          divCours.appendChild(coursSession1);
+          divCours.appendChild(coursSession);
         });
       })
-      .catch(error => console.log(error));
+    .catch(error => console.log(error));
   }
   
 })();
