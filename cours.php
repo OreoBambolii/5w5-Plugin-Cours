@@ -48,7 +48,7 @@ function creation_cours(){
             <button class="session5">Session 5</button>
             <button class="session6">Session 6</button>
         </div>
-        <div class="paragraphe"></div>
+        <div class="contenu"></div>
     </section>';
     return $contenu;
 }

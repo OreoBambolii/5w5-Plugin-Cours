@@ -1,16 +1,21 @@
 .section-cours {
     display: flex;
+    flex-direction: column;
     column-gap: 5rem;
 
     .menu-cours {
         display: flex;
-        flex-direction: column;
-        row-gap: 1rem;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0rem 0rem 0.5rem 0rem;
 
         .session1, .session2, .session3, .session4, .session5, .session6 {
             color: #C4E7D4;
             font-family: 'Work Sans', sans-serif;
             font-weight: bold;
+            font-size: small;
 
             padding: 0.3rem;
             border: 1px solid #030027;
@@ -25,6 +30,34 @@
             background-color: #2274A5;
             color: #030027;
             scale: (1.1);
+        }
+    }
+
+    .contenu {
+        display: flex;
+        flex-direction: column;
+
+        .article {
+            border: 1px solid #C4E7D4;
+            padding: 0rem 0.5rem;
+            margin: 0.5rem 0rem;
+
+            h5 {
+                margin: 0;
+                padding: 0.5rem 0rem;
+                color: #C4E7D4;
+            }
+
+            .ligne {
+                width: 2rem;
+                height: 0.1rem;
+                background-color: #2274A5;
+            }
+
+            p {
+                margin: 0;
+                padding: 0.5rem 0rem;
+            }
         }
     }
 

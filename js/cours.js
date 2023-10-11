@@ -28,7 +28,7 @@
         titre = article.title.rendered;
         //console.log(titre);
 
-        insererTitre(titre);
+        afficherCoursSession1();
       });
     })
     .catch(function (error) {
@@ -37,8 +37,8 @@
     });
 
   let btnSession1 = document.querySelector('.session1');
-  let divCours = document.querySelector('.paragraphe');
-  let lesCours;
+  let divCours = document.querySelector('.contenu');
+  /*let lesCours;
 
   function insererTitre(titre) {
     lesCours = document.createElement('p');
@@ -46,7 +46,7 @@
     lesCours.innerHTML = titre;
     //console.log(lesCours);
     divCours.appendChild(lesCours);
-  }
+  }*/
 
   btnSession1.addEventListener("click", function(){
     afficherCoursSession1();
@@ -64,8 +64,10 @@
         // Loop through the data and create article elements
         data.forEach(article => {
           const coursSession1 = document.createElement("div");
+          coursSession1.className = "article";
           coursSession1.innerHTML = `
-            <h5>${article.title.rendered}</h5>
+            <h4>${article.title.rendered}</h4>
+            <div class="ligne"></div>
             <div>${article.content.rendered}</div>
           `;
           divCours.appendChild(coursSession1);

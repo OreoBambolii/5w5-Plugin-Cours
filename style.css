@@ -1,16 +1,21 @@
 .section-cours {
   display: flex;
+  flex-direction: column;
   column-gap: 5rem;
 }
 .section-cours .menu-cours {
   display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0rem 0rem 0.5rem 0rem;
 }
 .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
   color: #C4E7D4;
   font-family: "Work Sans", sans-serif;
   font-weight: bold;
+  font-size: small;
   padding: 0.3rem;
   border: 1px solid #030027;
   background-color: #030027;
@@ -22,6 +27,29 @@
   background-color: #2274A5;
   color: #030027;
   scale: 1.1;
+}
+.section-cours .contenu {
+  display: flex;
+  flex-direction: column;
+}
+.section-cours .contenu .article {
+  border: 1px solid #C4E7D4;
+  padding: 0rem 0.5rem;
+  margin: 0.5rem 0rem;
+}
+.section-cours .contenu .article h5 {
+  margin: 0;
+  padding: 0.5rem 0rem;
+  color: #C4E7D4;
+}
+.section-cours .contenu .article .ligne {
+  width: 2rem;
+  height: 0.1rem;
+  background-color: #2274A5;
+}
+.section-cours .contenu .article p {
+  margin: 0;
+  padding: 0.5rem 0rem;
 }
 .section-cours .afficher {
   color: #C4E7D4;
