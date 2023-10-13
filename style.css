@@ -7,7 +7,6 @@
   display: flex;
   column-gap: 0.5rem;
   row-gap: 0.5rem;
-  flex-wrap: wrap;
   justify-content: center;
   padding: 0rem 0rem 0.5rem 0rem;
 }
@@ -51,6 +50,36 @@
   margin: 0;
   padding: 0.5rem 0rem;
 }
+.section-cours .contenu .article .contenu1 {
+  height: 10vw;
+  overflow-y: hidden;
+}
+.section-cours .contenu .article .contenu2 {
+  overflow-y: visible;
+}
+.section-cours .contenu .article .bouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0rem 0rem 0rem;
+  background-color: #030027;
+  color: #C4E7D4;
+  border: 1px solid #030027;
+}
+.section-cours .contenu .article .bouton:hover {
+  background-color: #C4E7D4;
+  border: 1px solid #C4E7D4;
+  border-radius: 3rem;
+  color: #030027;
+}
+
+.retirer {
+  display: none;
+}
+
+.afficher {
+  display: contents;
+}
 
 @media screen and (min-width: 768px) {
   .section-cours {
@@ -63,6 +92,7 @@
   }
   .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
     font-size: large;
+    width: 7vw;
   }
   .section-cours .contenu {
     display: grid;

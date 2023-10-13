@@ -54,3 +54,4 @@ function creation_cours(){
 }
 
 add_shortcode('em_cours', 'creation_cours');
+?>

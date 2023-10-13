@@ -7,7 +7,6 @@
         display: flex;
         column-gap: 0.5rem;
         row-gap: 0.5rem;
-        flex-wrap: wrap;
         justify-content: center;
         padding: 0rem 0rem 0.5rem 0rem;
 
@@ -58,8 +57,43 @@
                 margin: 0;
                 padding: 0.5rem 0rem;
             }
+
+            .contenu1 {
+                height: 10vw;
+                overflow-y: hidden;
+            }
+
+            .contenu2 {
+                overflow-y: visible;
+            }
+
+            .bouton {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0.5rem 0rem 0rem 0rem;
+                
+                background-color: #030027;
+                color: #C4E7D4;
+                border: 1px solid #030027;
+            }
+
+            .bouton:hover {
+                background-color: #C4E7D4;
+                border: 1px solid #C4E7D4;
+                border-radius: 3rem;
+                color: #030027;
+            }
         }
     }
+}
+
+.retirer {
+    display: none;
+}
+
+.afficher {
+    display: contents;
 }
 
 @media screen and (min-width:768px) {
@@ -73,6 +107,7 @@
 
             .session1, .session2, .session3, .session4, .session5, .session6 {
                 font-size: large;
+                width: 7vw;
             }
         }
 

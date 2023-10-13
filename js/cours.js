@@ -42,7 +42,9 @@
   let btnSession4 = document.querySelector('.session4');
   let btnSession5 = document.querySelector('.session5');
   let btnSession6 = document.querySelector('.session6');
+  let btnAfficherPlus = document.querySelector('.bouton');
   let divCours = document.querySelector('.contenu');
+  let divContenu = document.querySelector('.contenu');
   /*let lesCours;
 
   function insererTitre(titre) {
@@ -77,9 +79,15 @@
     afficherCoursSession(15);
   })
 
+  btnAfficherPlus.addEventListener("click", function(){
+    divContenu.classList.remove('contenu');
+    divContenu.classList.add('contenu2');
+  })
+
   function afficherCoursSession(id) {
     let urlSession = "http://localhost:8080/5w5/wp-json/wp/v2/posts?categories=" + id;
-  
+    
+
     fetch(urlSession)
       .then(response => response.json())
       .then(data => {
@@ -93,7 +101,8 @@
           coursSession.innerHTML = `
             <h4>${article.title.rendered}</h4>
             <div class="ligne"></div>
-            <div>${article.content.rendered}</div>
+            <div class="contenu">${article.excerpt.rendered}</div>
+            <button class="bouton"><span class="material-symbols-rounded">expand_more</span></button>
           `;
           divCours.appendChild(coursSession);
         });
