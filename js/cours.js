@@ -1,6 +1,7 @@
 (function () {
   // URL de l'API REST de WordPress
   //let url = "https://gftnth00.mywhc.ca/tim04/wp-json/wp/v2/posts?categories=4";
+  let categorySlug = 'cours';
   let url = "http://localhost:8080/5w5/wp-json/wp/v2/posts?categories=25&per_page=30";
 
   let titre;
@@ -44,7 +45,7 @@
   let btnSession6 = document.querySelector('.session6');
   let btnAfficherPlus = document.querySelector('.bouton');
   let divCours = document.querySelector('.contenu');
-  let divContenu = document.querySelector('.contenu');
+  //let divContenu = document.querySelector('.contenu');
   /*let lesCours;
 
   function insererTitre(titre) {
@@ -57,6 +58,7 @@
 
   btnSession1.addEventListener("click", function(){
     afficherCoursSession(4);
+    
   })
 
   btnSession2.addEventListener("click", function(){
@@ -80,8 +82,7 @@
   })
 
   btnAfficherPlus.addEventListener("click", function(){
-    divContenu.classList.remove('contenu');
-    divContenu.classList.add('contenu2');
+    
   })
 
   function afficherCoursSession(id) {
@@ -101,7 +102,7 @@
           coursSession.innerHTML = `
             <h4>${article.title.rendered}</h4>
             <div class="ligne"></div>
-            <div class="contenu">${article.excerpt.rendered}</div>
+            <div class="contenu-partiel">${article.excerpt.rendered}</div>
             <button class="bouton"><span class="material-symbols-rounded">expand_more</span></button>
           `;
           divCours.appendChild(coursSession);

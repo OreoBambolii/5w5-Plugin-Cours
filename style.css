@@ -16,16 +16,14 @@
   font-weight: bold;
   font-size: small;
   padding: 0.3rem;
-  border: 1px solid #030027;
   background-color: #030027;
-  transform: scale(1);
-  transition: transform 0.3s;
+  border: 1px solid #030027;
+  transition: color 0.5s, background-color 0.5s, border 0.5s;
 }
 .section-cours .menu-cours .session1:hover, .section-cours .menu-cours .session2:hover, .section-cours .menu-cours .session3:hover, .section-cours .menu-cours .session4:hover, .section-cours .menu-cours .session5:hover, .section-cours .menu-cours .session6:hover {
-  border: 1px solid #2274A5;
   background-color: #2274A5;
+  border: 1px solid #2274A5;
   color: #030027;
-  scale: 1.1;
 }
 .section-cours .contenu {
   display: flex;
@@ -35,6 +33,8 @@
   border: 1px solid #C4E7D4;
   padding: 0rem 1rem 0.5rem 1rem;
   margin: 0.5rem 0rem;
+  opacity: 1;
+  animation: articles 0.5s ease-in;
 }
 .section-cours .contenu .article h4 {
   margin: 0;
@@ -50,27 +50,36 @@
   margin: 0;
   padding: 0.5rem 0rem;
 }
-.section-cours .contenu .article .contenu1 {
+.section-cours .contenu .article .contenu-partiel {
   height: 10vw;
   overflow-y: hidden;
 }
-.section-cours .contenu .article .contenu2 {
-  overflow-y: visible;
+.section-cours .contenu .article .contenu-complet {
+  display: none;
 }
 .section-cours .contenu .article .bouton {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin: 0.5rem 0rem 0rem 0rem;
   background-color: #030027;
   color: #C4E7D4;
   border: 1px solid #030027;
+  border-radius: 3rem;
+  transition: background-color 0.3s, color 3s, border 0.3s;
 }
 .section-cours .contenu .article .bouton:hover {
   background-color: #C4E7D4;
   border: 1px solid #C4E7D4;
-  border-radius: 3rem;
   color: #030027;
+}
+@keyframes articles {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .retirer {

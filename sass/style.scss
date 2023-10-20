@@ -17,18 +17,16 @@
             font-size: small;
 
             padding: 0.3rem;
-            border: 1px solid #030027;
             background-color: #030027;
+            border: 1px solid #030027;
 
-            transform: scale(1);
-            transition: transform 0.3s;
+            transition: color 0.5s, background-color 0.5s, border 0.5s;
         }
 
         .session1:hover, .session2:hover, .session3:hover, .session4:hover, .session5:hover, .session6:hover {
-            border: 1px solid #2274A5;
             background-color: #2274A5;
+            border: 1px solid #2274A5;
             color: #030027;
-            scale: (1.1);
         }
     }
 
@@ -40,6 +38,9 @@
             border: 1px solid #C4E7D4;
             padding: 0rem 1rem 0.5rem 1rem;
             margin: 0.5rem 0rem;
+            opacity: 1;
+
+            animation: articles 0.5s ease-in;
 
             h4 {
                 margin: 0;
@@ -58,31 +59,42 @@
                 padding: 0.5rem 0rem;
             }
 
-            .contenu1 {
+            .contenu-partiel {
                 height: 10vw;
                 overflow-y: hidden;
             }
 
-            .contenu2 {
-                overflow-y: visible;
+            .contenu-complet {
+                display: none;
             }
 
             .bouton {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-end;
                 align-items: center;
                 margin: 0.5rem 0rem 0rem 0rem;
                 
                 background-color: #030027;
                 color: #C4E7D4;
                 border: 1px solid #030027;
+                border-radius: 3rem;
+
+                transition: background-color 0.3s, color 3s, border 0.3s;
             }
 
             .bouton:hover {
                 background-color: #C4E7D4;
                 border: 1px solid #C4E7D4;
-                border-radius: 3rem;
                 color: #030027;
+            }
+        }
+
+        @keyframes articles {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
     }
