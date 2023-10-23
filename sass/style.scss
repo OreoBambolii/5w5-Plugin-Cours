@@ -33,18 +33,18 @@
     .contenu {
         display: flex;
         flex-direction: column;
+        opacity: 1;
 
         .article {
             border: 1px solid #C4E7D4;
             padding: 0rem 1rem 0.5rem 1rem;
             margin: 0.5rem 0rem;
-            opacity: 1;
 
-            animation: articles 0.5s ease-in;
-
-            h4 {
+            animation: cours 1s ease-in-out;
+            
+            h5 {
                 margin: 0;
-                padding: 0.5rem 0rem;
+                padding: 1rem 0rem 0.5rem 0rem;
                 color: #C4E7D4;
             }
 
@@ -59,16 +59,17 @@
                 padding: 0.5rem 0rem;
             }
 
-            .contenu-partiel {
-                height: 10vw;
-                overflow-y: hidden;
+            .extrait {
+                display: flex;
             }
-
-            .contenu-complet {
+        
+            .complet {
                 display: none;
+
+                flex-direction: column;
             }
 
-            .bouton {
+            .fleche-plus {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
@@ -78,35 +79,32 @@
                 color: #C4E7D4;
                 border: 1px solid #030027;
                 border-radius: 3rem;
+                cursor: pointer;
 
-                transition: background-color 0.3s, color 3s, border 0.3s;
+                transition: background-color 0.3s, color 0.3s, border 0.3s;
             }
 
-            .bouton:hover {
+            .fleche-plus:hover {
                 background-color: #C4E7D4;
                 border: 1px solid #C4E7D4;
                 color: #030027;
             }
         }
+    }
 
-        @keyframes articles {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+    @keyframes cours {
+        0% {
+            opacity: 0;
+            transform: translateX(55vw);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0vw);
         }
     }
 }
 
-.retirer {
-    display: none;
-}
 
-.afficher {
-    display: contents;
-}
 
 @media screen and (min-width:768px) {
     .section-cours {

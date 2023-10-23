@@ -43,22 +43,11 @@
   let btnSession4 = document.querySelector('.session4');
   let btnSession5 = document.querySelector('.session5');
   let btnSession6 = document.querySelector('.session6');
-  let btnAfficherPlus = document.querySelector('.bouton');
+  //let btnAfficherPlus = document.querySelector('.fleche-plus');
   let divCours = document.querySelector('.contenu');
-  //let divContenu = document.querySelector('.contenu');
-  /*let lesCours;
-
-  function insererTitre(titre) {
-    lesCours = document.createElement('p');
-    lesCours.classList.add('afficher');
-    lesCours.innerHTML = titre;
-    //console.log(lesCours);
-    divCours.appendChild(lesCours);
-  }*/
 
   btnSession1.addEventListener("click", function(){
     afficherCoursSession(4);
-    
   })
 
   btnSession2.addEventListener("click", function(){
@@ -81,14 +70,9 @@
     afficherCoursSession(15);
   })
 
-  btnAfficherPlus.addEventListener("click", function(){
-    
-  })
-
   function afficherCoursSession(id) {
     let urlSession = "http://localhost:8080/5w5/wp-json/wp/v2/posts?categories=" + id;
     
-
     fetch(urlSession)
       .then(response => response.json())
       .then(data => {
@@ -100,15 +84,38 @@
           const coursSession = document.createElement("div");
           coursSession.className = "article";
           coursSession.innerHTML = `
-            <h4>${article.title.rendered}</h4>
+            <h5>${article.title.rendered}</h5>
             <div class="ligne"></div>
-            <div class="contenu-partiel">${article.excerpt.rendered}</div>
-            <button class="bouton"><span class="material-symbols-rounded">expand_more</span></button>
+            <div class="extrait">${article.excerpt.rendered}</div>
+            <div class="complet">${article.content.rendered}</div>
+            <button class="fleche-plus"><span class="material-symbols-rounded">expand_more</span></button>
           `;
           divCours.appendChild(coursSession);
         });
       })
     .catch(error => console.log(error));
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("click", function (e) {
+      //Vérifie que le bouton a été cliqué
+      if (e.target && e.target.classList.contains("material-symbols-rounded")) {
+        const article = e.target.closest(".article");
+        const extrait = article.querySelector(".extrait");
+        const complet = article.querySelector(".complet");
+    
+        // Permet d'afficher l'extrait ou les infos au complet du cours
+        if (extrait.style.display === "none") {
+          extrait.style.display = "flex";
+          complet.style.display = "none";
+          //e.target.textContent = "Afficher plus";
+        } else {
+          extrait.style.display = "none";
+          complet.style.display = "flex";
+          //e.target.textContent = "Afficher moins";
+        }
+      }
+    });
+  });
   
 })();
