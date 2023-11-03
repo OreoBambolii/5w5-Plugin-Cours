@@ -1,7 +1,5 @@
 (function () {
   // URL de l'API REST de WordPress
-  //let url = "https://gftnth00.mywhc.ca/tim04/wp-json/wp/v2/posts?categories=4";
-  let categorySlug = 'cours';
   let url = "http://localhost:8080/5w5/wp-json/wp/v2/posts?categories=25&per_page=30";
 
   let titre;
@@ -43,7 +41,6 @@
   let btnSession4 = document.querySelector('.session4');
   let btnSession5 = document.querySelector('.session5');
   let btnSession6 = document.querySelector('.session6');
-  //let btnAfficherPlus = document.querySelector('.fleche-plus');
   let divCours = document.querySelector('.contenu');
 
   btnSession1.addEventListener("click", function(){
@@ -103,15 +100,18 @@
         const article = e.target.closest(".article");
         const extrait = article.querySelector(".extrait");
         const complet = article.querySelector(".complet");
+        const fleche = article.querySelector(".fleche-plus");
     
         // Permet d'afficher l'extrait ou les infos au complet du cours
         if (extrait.style.display === "none") {
           extrait.style.display = "flex";
           complet.style.display = "none";
+          fleche.style.transform = "rotate(0deg)";
           //e.target.textContent = "Afficher plus";
         } else {
           extrait.style.display = "none";
           complet.style.display = "flex";
+          fleche.style.transform = "rotate(180deg)";
           //e.target.textContent = "Afficher moins";
         }
       }
