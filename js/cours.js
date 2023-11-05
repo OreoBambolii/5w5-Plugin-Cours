@@ -43,6 +43,28 @@
   let btnSession6 = document.querySelector('.session6');
   let divCours = document.querySelector('.contenu');
 
+  function modificationTexteBouton() {
+    if (window.innerWidth < 768) {
+      btnSession1.textContent = "1ère";
+      btnSession2.textContent = "2e";
+      btnSession3.textContent = "3e";
+      btnSession4.textContent = "4e";
+      btnSession5.textContent = "5e";
+      btnSession6.textContent = "6e";
+    } else {
+      btnSession1.textContent = "Session 1";
+      btnSession2.textContent = "Session 2";
+      btnSession3.textContent = "Session 3";
+      btnSession4.textContent = "Session 4";
+      btnSession5.textContent = "Session 5";
+      btnSession6.textContent = "Session 6";
+    }
+  }
+  
+  // Call the function on page load and whenever the window is resized
+  window.addEventListener('load', modificationTexteBouton);
+  window.addEventListener('resize', modificationTexteBouton);
+
   btnSession1.addEventListener("click", function(){
     afficherCoursSession(4);
   })
