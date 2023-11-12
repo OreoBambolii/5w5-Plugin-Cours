@@ -1,28 +1,31 @@
-.section-cours {
+.section-cours { // Conteneur qui englobe le plugin cours
     display: flex;
     flex-direction: column;
     column-gap: 5rem;
 
-    .menu-cours {
+    // Menu qui permet de styler les boutons de sessions
+    .menu-cours { 
         display: flex;
         column-gap: 0.5rem;
         row-gap: 0.5rem;
-        justify-content: center;
+        justify-content: space-around;
         padding: 0rem 0rem 0.5rem 0rem;
 
+        // Les boutons des différentes sessions
         .session1, .session2, .session3, .session4, .session5, .session6 {
             color: #C4E7D4;
             font-family: 'Work Sans', sans-serif;
             font-weight: bold;
-            font-size: small;
+            font-size: clamp(1rem, 0rem + 3.2vw, 3rem);
 
-            padding: 0.3rem;
+            padding: 0.5rem;
             background-color: #030027;
             border: 1px solid #030027;
 
             transition: color 0.5s, background-color 0.5s, border 0.5s;
         }
 
+        // L'effet hover des boutons de sessions
         .session1:hover, .session2:hover, .session3:hover, .session4:hover, .session5:hover, .session6:hover {
             background-color: #2274A5;
             border: 1px solid #2274A5;
@@ -30,50 +33,98 @@
         }
     }
 
+    // Div dans lequel est générer les cours
     .contenu {
-        display: flex;
-        flex-direction: column;
-        opacity: 1;
+        display: grid;
+        grid-template-areas:    
+                "cours1"
+                "cours2"
+                "cours3"
+                "cours4"
+                "cours5"
+                "cours6";
+        
+        .article:nth-of-type(1) {
+            grid-area: "cours1";
+        }
+                
+        .article:nth-of-type(2) {
+            grid-area: "cours2";
+        }
+    
+        .article:nth-of-type(3) {
+            grid-area: "cours3";
+        }
+    
+        .article:nth-of-type(4) {
+            grid-area: "cours4";
+        }
+    
+        .article:nth-of-type(5) {
+            grid-area: "cours5";
+        }
 
+        .article:nth-of-type(6) {
+            grid-area: "cours6";
+        }
+
+        // Contenant pour un cours
         .article {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
             border: 1px solid #C4E7D4;
             padding: 0rem 1rem 0.5rem 1rem;
             margin: 0.5rem 0rem;
 
             animation: cours 1s ease-in-out;
             
+            // Titre d'un cours
             h5 {
                 margin: 0;
                 padding: 1rem 0rem 0.5rem 0rem;
                 color: #C4E7D4;
+                //font-size: clamp(1rem, 0rem + 3.2vw, 3rem);
+                font-size: clamp(1.375rem, 1.0633rem + 0.8658vw, 1.875rem);
             }
 
+            // Ligne décoratrice bleue en dessous du titre
             .ligne {
                 width: 2rem;
-                height: 0.1rem;
+                height: 0.2rem;
                 background-color: #2274A5;
             }
 
+            // Contenu du cours
             p {
                 margin: 0;
                 padding: 0.5rem 0rem;
+                text-align: justify;
+                //font-size: clamp(1rem, 0.6538rem + 0.9615vw, 1.25rem);
+                font-size: clamp(1rem, 0.623rem + 1.0471vw, 1.125rem);
+                line-height: 4vh;
             }
 
+
+            // Section visible par défaut
             .extrait {
                 display: flex;
             }
         
+            // Section qui devient visible lorsqu'on clique sur la flèche
             .complet {
                 display: none;
-
                 flex-direction: column;
             }
 
+            // Flèche qui permet de voir le contenu complet du cours
             .fleche-plus {
                 display: flex;
-                justify-content: flex-end;
+                justify-content: center;
                 align-items: center;
-                margin: 0.5rem 0rem 0rem 0rem;
+                margin: 0.3rem 5rem;
+                //padding: 1rem 0rem;
+                flex-shrink: 0;
                 
                 background-color: #030027;
                 color: #C4E7D4;
@@ -82,10 +133,14 @@
                 cursor: pointer;
 
                 transform: rotate(0deg);
-
                 transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+                .material-symbols-rounded {
+                    font-size: 35px;
+                }
             }
 
+            // L'effet hover sur la flèche
             .fleche-plus:hover {
                 background-color: #C4E7D4;
                 border: 1px solid #C4E7D4;
@@ -94,6 +149,7 @@
         }
     }
 
+    // Animation qui permet de faire apparaître les cours depuis le côté
     @keyframes cours {
         0% {
             opacity: 0;
@@ -106,12 +162,40 @@
     }
 }
 
+/*---------------------------------------------------------------------------------------- Media qui affecte entre 576 et 767 px -------*/
+@media screen and (min-width: 576px) {
+    .section-cours {
+    
+        .menu-cours {
+    
+            .session1, .session2, .session3, .session4, .session5, .session6 {
+                padding: 0.5rem 1rem;
+            }
+        }
 
+        .contenu {
+    
+            .article {
+                margin: 1rem 0rem;
 
+                p {
+                    line-height: 3.2vh;
+                }
+
+                .fleche-plus {
+                    margin: 0.3rem 15rem;
+                }
+            }
+        }
+    }
+}
+ 
+
+/*---------------------------------------------------------------------------------------- Media qui affecte entre 768 et 992 px -------*/
 @media screen and (min-width:768px) {
     .section-cours {
         flex-direction: row;
-        column-gap: 25rem;
+        column-gap: 5rem;
 
         .menu-cours {
             flex-direction: column;
@@ -119,7 +203,8 @@
 
             .session1, .session2, .session3, .session4, .session5, .session6 {
                 font-size: large;
-                width: 7vw;
+                width: 16vw;
+                text-align: left;
             }
         }
 
@@ -131,32 +216,84 @@
                 "cours5 cours6";
             column-gap: 1rem;
             row-gap: 1rem;
-            
+
             .article:nth-of-type(1) {
                 grid-area: "cours1";
             }
-            
+                    
             .article:nth-of-type(2) {
                 grid-area: "cours2";
             }
-
+        
             .article:nth-of-type(3) {
                 grid-area: "cours3";
             }
-
+        
             .article:nth-of-type(4) {
                 grid-area: "cours4";
             }
-
+        
             .article:nth-of-type(5) {
                 grid-area: "cours5";
+            }
+    
+            .article:nth-of-type(6) {
+                grid-area: "cours6";
             }
 
             .article {
 
-                h4 {
+                h5 {
                     padding: 1rem 0rem;
                 }
+
+                p {
+                    font-size: clamp(0.875rem, 0.0228rem + 1.7778vw, 1.125rem);
+                }
+
+                .fleche-plus {
+                    margin: 0.3rem 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .section-cours {
+        column-gap: 12rem;
+
+        .menu-cours {
+
+            .session1, .session2, .session3, .session4, .session5, .session6 {
+                font-size: large;
+                max-width: 10vw;
+                text-align: center;
+            }
+        }
+
+        .contenu {
+
+            .article {
+
+                .fleche-plus {
+                    margin: 0.3rem 10rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1500px) {
+    .section-cours {
+        column-gap: 20rem;
+
+        .menu-cours {
+
+            .session1, .session2, .session3, .session4, .session5, .session6 {
+                font-size: large;
+                max-width: 8vw;
+                text-align: left;
             }
         }
     }

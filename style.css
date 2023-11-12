@@ -7,15 +7,15 @@
   display: flex;
   column-gap: 0.5rem;
   row-gap: 0.5rem;
-  justify-content: center;
+  justify-content: space-around;
   padding: 0rem 0rem 0.5rem 0rem;
 }
 .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
   color: #C4E7D4;
   font-family: "Work Sans", sans-serif;
   font-weight: bold;
-  font-size: small;
-  padding: 0.3rem;
+  font-size: clamp(1rem, 0rem + 3.2vw, 3rem);
+  padding: 0.5rem;
   background-color: #030027;
   border: 1px solid #030027;
   transition: color 0.5s, background-color 0.5s, border 0.5s;
@@ -26,11 +26,31 @@
   color: #030027;
 }
 .section-cours .contenu {
-  display: flex;
-  flex-direction: column;
-  opacity: 1;
+  display: grid;
+  grid-template-areas: "cours1" "cours2" "cours3" "cours4" "cours5" "cours6";
+}
+.section-cours .contenu .article:nth-of-type(1) {
+  grid-area: "cours1";
+}
+.section-cours .contenu .article:nth-of-type(2) {
+  grid-area: "cours2";
+}
+.section-cours .contenu .article:nth-of-type(3) {
+  grid-area: "cours3";
+}
+.section-cours .contenu .article:nth-of-type(4) {
+  grid-area: "cours4";
+}
+.section-cours .contenu .article:nth-of-type(5) {
+  grid-area: "cours5";
+}
+.section-cours .contenu .article:nth-of-type(6) {
+  grid-area: "cours6";
 }
 .section-cours .contenu .article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   border: 1px solid #C4E7D4;
   padding: 0rem 1rem 0.5rem 1rem;
   margin: 0.5rem 0rem;
@@ -40,15 +60,19 @@
   margin: 0;
   padding: 1rem 0rem 0.5rem 0rem;
   color: #C4E7D4;
+  font-size: clamp(1.375rem, 1.0633rem + 0.8658vw, 1.875rem);
 }
 .section-cours .contenu .article .ligne {
   width: 2rem;
-  height: 0.1rem;
+  height: 0.2rem;
   background-color: #2274A5;
 }
 .section-cours .contenu .article p {
   margin: 0;
   padding: 0.5rem 0rem;
+  text-align: justify;
+  font-size: clamp(1rem, 0.623rem + 1.0471vw, 1.125rem);
+  line-height: 4vh;
 }
 .section-cours .contenu .article .extrait {
   display: flex;
@@ -59,9 +83,10 @@
 }
 .section-cours .contenu .article .fleche-plus {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  margin: 0.5rem 0rem 0rem 0rem;
+  margin: 0.3rem 5rem;
+  flex-shrink: 0;
   background-color: #030027;
   color: #C4E7D4;
   border: 1px solid #030027;
@@ -69,6 +94,9 @@
   cursor: pointer;
   transform: rotate(0deg);
   transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.section-cours .contenu .article .fleche-plus .material-symbols-rounded {
+  font-size: 35px;
 }
 .section-cours .contenu .article .fleche-plus:hover {
   background-color: #C4E7D4;
@@ -86,10 +114,26 @@
   }
 }
 
+/*---------------------------------------------------------------------------------------- Media qui affecte entre 576 et 767 px -------*/
+@media screen and (min-width: 576px) {
+  .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
+    padding: 0.5rem 1rem;
+  }
+  .section-cours .contenu .article {
+    margin: 1rem 0rem;
+  }
+  .section-cours .contenu .article p {
+    line-height: 3.2vh;
+  }
+  .section-cours .contenu .article .fleche-plus {
+    margin: 0.3rem 15rem;
+  }
+}
+/*---------------------------------------------------------------------------------------- Media qui affecte entre 768 et 992 px -------*/
 @media screen and (min-width: 768px) {
   .section-cours {
     flex-direction: row;
-    column-gap: 25rem;
+    column-gap: 5rem;
   }
   .section-cours .menu-cours {
     flex-direction: column;
@@ -97,7 +141,8 @@
   }
   .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
     font-size: large;
-    width: 7vw;
+    width: 16vw;
+    text-align: left;
   }
   .section-cours .contenu {
     display: grid;
@@ -120,7 +165,39 @@
   .section-cours .contenu .article:nth-of-type(5) {
     grid-area: "cours5";
   }
-  .section-cours .contenu .article h4 {
+  .section-cours .contenu .article:nth-of-type(6) {
+    grid-area: "cours6";
+  }
+  .section-cours .contenu .article h5 {
     padding: 1rem 0rem;
+  }
+  .section-cours .contenu .article p {
+    font-size: clamp(0.875rem, 0.0228rem + 1.7778vw, 1.125rem);
+  }
+  .section-cours .contenu .article .fleche-plus {
+    margin: 0.3rem 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section-cours {
+    column-gap: 12rem;
+  }
+  .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
+    font-size: large;
+    max-width: 10vw;
+    text-align: center;
+  }
+  .section-cours .contenu .article .fleche-plus {
+    margin: 0.3rem 10rem;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .section-cours {
+    column-gap: 20rem;
+  }
+  .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
+    font-size: large;
+    max-width: 8vw;
+    text-align: left;
   }
 }/*# sourceMappingURL=style.css.map */
