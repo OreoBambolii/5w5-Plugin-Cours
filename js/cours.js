@@ -2,8 +2,6 @@
   // URL de l'API REST de WordPress
   let url = "http://localhost:8080/5w5/wp-json/wp/v2/posts?categories=25&per_page=30";
 
-  let titre;
-
   // Effectuer la requête HTTP en utilisant fetch()
   fetch(url)
     .then(function (response) {
@@ -19,7 +17,7 @@
     })
     .then(function (data) {
       // La variable "data" contient la réponse JSON
-      console.log("Variable data", data);
+      //console.log("Variable data", data);
 
       // Maintenant, vous pouvez traiter les données comme vous le souhaitez
       // Par exemple, extraire les titres des articles comme dans l'exemple précédent
@@ -42,8 +40,9 @@
   let btnSession5 = document.querySelector('.session5');
   let btnSession6 = document.querySelector('.session6');
   let divCours = document.querySelector('.contenu');
+  let extrait = document.querySelector('.extrait');
 
-  function modificationTexteBouton() {
+  function modificationsMobile() {
     if (window.innerWidth < 768) {
       btnSession1.textContent = "1ère";
       btnSession2.textContent = "2e";
@@ -62,8 +61,8 @@
   }
   
   // Call the function on page load and whenever the window is resized
-  window.addEventListener('load', modificationTexteBouton);
-  window.addEventListener('resize', modificationTexteBouton);
+  window.addEventListener('load', modificationsMobile);
+  window.addEventListener('resize', modificationsMobile);
 
   btnSession1.addEventListener("click", function(){
     afficherCoursSession(4);

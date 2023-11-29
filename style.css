@@ -49,7 +49,7 @@
 }
 .section-cours .contenu .article {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   border: 1px solid #C4E7D4;
   padding: 0rem 1rem 0.5rem 1rem;
@@ -70,12 +70,12 @@
 .section-cours .contenu .article p {
   margin: 0;
   padding: 0.5rem 0rem;
-  text-align: justify;
+  text-align: left;
   font-size: clamp(1rem, 0.623rem + 1.0471vw, 1.125rem);
   line-height: 4vh;
 }
 .section-cours .contenu .article .extrait {
-  display: flex;
+  display: none;
 }
 .section-cours .contenu .article .complet {
   display: none;
@@ -173,6 +173,9 @@
   }
   .section-cours .contenu .article p {
     font-size: clamp(0.875rem, 0.0228rem + 1.7778vw, 1.125rem);
+  }
+  .section-cours .contenu .article .extrait {
+    display: flex;
   }
   .section-cours .contenu .article .fleche-plus {
     margin: 0.3rem 4rem;

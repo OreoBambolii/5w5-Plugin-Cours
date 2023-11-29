@@ -71,7 +71,7 @@
         // Contenant pour un cours
         .article {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: column;
             border: 1px solid #C4E7D4;
             padding: 0rem 1rem 0.5rem 1rem;
@@ -99,7 +99,7 @@
             p {
                 margin: 0;
                 padding: 0.5rem 0rem;
-                text-align: justify;
+                text-align: left;
                 //font-size: clamp(1rem, 0.6538rem + 0.9615vw, 1.25rem);
                 font-size: clamp(1rem, 0.623rem + 1.0471vw, 1.125rem);
                 line-height: 4vh;
@@ -108,7 +108,7 @@
 
             // Section visible par défaut
             .extrait {
-                display: flex;
+                display: none;
             }
         
             // Section qui devient visible lorsqu'on clique sur la flèche
@@ -249,6 +249,10 @@
 
                 p {
                     font-size: clamp(0.875rem, 0.0228rem + 1.7778vw, 1.125rem);
+                }
+
+                .extrait {
+                    display: flex;
                 }
 
                 .fleche-plus {
