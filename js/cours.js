@@ -123,17 +123,29 @@
         const complet = article.querySelector(".complet");
         const fleche = article.querySelector(".fleche-plus");
     
-        // Permet d'afficher l'extrait ou les infos au complet du cours
-        if (extrait.style.display === "none") {
-          extrait.style.display = "flex";
-          complet.style.display = "none";
-          fleche.style.transform = "rotate(0deg)";
-          //e.target.textContent = "Afficher plus";
-        } else {
-          extrait.style.display = "none";
-          complet.style.display = "flex";
-          fleche.style.transform = "rotate(180deg)";
-          //e.target.textContent = "Afficher moins";
+        if (window.innerWidth > 768) {
+          // Permet d'afficher l'extrait ou les infos au complet du cours
+          if (extrait.style.display === "none") {
+            extrait.style.display = "flex";
+            complet.style.display = "none";
+            fleche.style.transform = "rotate(0deg)";
+            //e.target.textContent = "Afficher plus";
+          } else {
+            extrait.style.display = "none";
+            complet.style.display = "flex";
+            fleche.style.transform = "rotate(180deg)";
+            //e.target.textContent = "Afficher moins";
+          }
+        } else if (window.innerWidth <= 767) {
+          if (complet.style.display = "none") {
+            complet.style.display = "flex";
+            fleche.style.transform = "rotate(0deg)";
+            //e.target.textContent = "Afficher plus";
+          } else if (complet.style.display = "flex") {
+            complet.style.display = "none";
+            fleche.style.transform = "rotate(180deg)";
+            //e.target.textContent = "Afficher moins";
+          }
         }
       }
     });
