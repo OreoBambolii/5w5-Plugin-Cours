@@ -137,13 +137,13 @@
             //e.target.textContent = "Afficher moins";
           }
         } else if (window.innerWidth <= 767) {
-          if (complet.style.display = "none") {
+          if (complet.style.display === "none") {
             complet.style.display = "flex";
-            fleche.style.transform = "rotate(0deg)";
-            //e.target.textContent = "Afficher plus";
-          } else if (complet.style.display = "flex") {
-            complet.style.display = "none";
             fleche.style.transform = "rotate(180deg)";
+            //e.target.textContent = "Afficher plus";
+          } else {
+            complet.style.display = "none";
+            fleche.style.transform = "rotate(0deg)";
             //e.target.textContent = "Afficher moins";
           }
         }
