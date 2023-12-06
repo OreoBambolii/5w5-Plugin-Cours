@@ -1,7 +1,6 @@
 .section-cours {
   display: flex;
   flex-direction: column;
-  column-gap: 5rem;
 }
 .section-cours .menu-cours {
   display: flex;
@@ -14,7 +13,7 @@
   color: #C4E7D4;
   font-family: "Work Sans", sans-serif;
   font-weight: bold;
-  font-size: clamp(1rem, 0rem + 3.2vw, 3rem);
+  font-size: clamp(1.375rem, 1.0633rem + 0.8658vw, 1.875rem);
   padding: 0.5rem;
   background-color: #030027;
   border: 1px solid #030027;
@@ -134,20 +133,15 @@
 }
 /*---------------------------------------------------------------------------------------- Media qui affecte entre 768 et 992 px -------*/
 @media screen and (min-width: 768px) {
-  .section-cours {
-    column-gap: 5rem;
-  }
   .section-cours .menu-cours {
     justify-content: center;
-  }
-  .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
-    font-size: large;
-    text-align: left;
+    padding: 0rem 0rem 1.5rem 0rem;
+    column-gap: 0rem;
   }
   .section-cours .contenu {
     display: grid;
     grid-template-areas: "cours1 cours2" "cours3 cours4" "cours5 cours6";
-    column-gap: 1rem;
+    column-gap: 2rem;
     row-gap: 1rem;
     padding: 0rem 1.5rem;
   }
@@ -169,6 +163,9 @@
   .section-cours .contenu .article:nth-of-type(6) {
     grid-area: "cours6";
   }
+  .section-cours .contenu .article {
+    padding: 0rem 1.5rem 0.3rem 1.5rem;
+  }
   .section-cours .contenu .article h5 {
     padding: 1rem 0rem;
   }
@@ -179,7 +176,7 @@
     display: flex;
   }
   .section-cours .contenu .article .fleche-plus {
-    margin: 0.3rem 4rem;
+    margin: 0.3rem 4rem 0rem 4rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -187,21 +184,12 @@
     column-gap: 12rem;
   }
   .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
-    font-size: large;
-    max-width: 10vw;
     text-align: center;
   }
+  .section-cours .contenu {
+    column-gap: 5rem;
+  }
   .section-cours .contenu .article .fleche-plus {
-    margin: 0.3rem 10rem;
-  }
-}
-@media screen and (min-width: 1500px) {
-  .section-cours {
-    column-gap: 20rem;
-  }
-  .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
-    font-size: large;
-    max-width: 8vw;
-    text-align: left;
+    margin: 0.3rem 10rem 0rem 10rem;
   }
 }/*# sourceMappingURL=style.css.map */
