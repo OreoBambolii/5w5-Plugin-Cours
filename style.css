@@ -10,19 +10,22 @@
   padding: 0rem 0rem 0.5rem 0rem;
 }
 .section-cours .menu-cours .session1, .section-cours .menu-cours .session2, .section-cours .menu-cours .session3, .section-cours .menu-cours .session4, .section-cours .menu-cours .session5, .section-cours .menu-cours .session6 {
-  color: #C4E7D4;
+  color: #030027;
   font-family: "Work Sans", sans-serif;
   font-weight: bold;
-  font-size: clamp(1.375rem, 1.0633rem + 0.8658vw, 1.875rem);
-  padding: 0.5rem;
-  background-color: #030027;
-  border: 1px solid #030027;
-  transition: color 0.5s, background-color 0.5s, border 0.5s;
+  font-size: clamp(1rem, 0rem + 2vw, 1.2rem);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: #C4E7D4;
+  border: 2px solid #C4E7D4;
+  border-radius: 2rem;
+  transform: scale(1);
+  transition: background-color 0.3s, border 0.3s, transform 0.3s;
 }
 .section-cours .menu-cours .session1:hover, .section-cours .menu-cours .session2:hover, .section-cours .menu-cours .session3:hover, .section-cours .menu-cours .session4:hover, .section-cours .menu-cours .session5:hover, .section-cours .menu-cours .session6:hover {
   background-color: #2274A5;
-  border: 1px solid #2274A5;
-  color: #030027;
+  border: 2px solid #2274A5;
+  transform: scale(1.1);
 }
 .section-cours .contenu {
   display: grid;
@@ -48,7 +51,7 @@
 }
 .section-cours .contenu .article {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   border: 1px solid #C4E7D4;
   padding: 0rem 1rem 0.5rem 1rem;
@@ -88,6 +91,7 @@
   justify-content: center;
   align-items: center;
   margin: 0.3rem 5rem;
+  padding: 0rem 1rem;
   flex-shrink: 0;
   background-color: #030027;
   color: #C4E7D4;
@@ -134,9 +138,11 @@
 /*---------------------------------------------------------------------------------------- Media qui affecte entre 768 et 992 px -------*/
 @media screen and (min-width: 768px) {
   .section-cours .menu-cours {
-    justify-content: center;
     padding: 0rem 0rem 1.5rem 0rem;
     column-gap: 0rem;
+    /*.session1, .session2, .session3, .session4, .session5, .session6 {
+        //font-size: large;
+    }*/
   }
   .section-cours .contenu {
     display: grid;

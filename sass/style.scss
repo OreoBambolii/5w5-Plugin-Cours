@@ -12,24 +12,27 @@
 
         // Les boutons des différentes sessions
         .session1, .session2, .session3, .session4, .session5, .session6 {
-            color: #C4E7D4;
+            color: #030027;
             font-family: 'Work Sans', sans-serif;
             font-weight: bold;
-            //font-size: clamp(1rem, 0rem + 3.2vw, 3rem);
-            font-size: clamp(1.375rem, 1.0633rem + 0.8658vw, 1.875rem);
+            font-size: clamp(1rem, 0rem + 2vw, 1.2rem);
+            cursor: pointer;
+            //font-size: clamp(1.375rem, 1.0633rem + 0.8658vw, 1.5rem);
 
-            padding: 0.5rem;
-            background-color: #030027;
-            border: 1px solid #030027;
+            padding: 0.5rem 1rem;
+            background-color: #C4E7D4;
+            border: 2px solid #C4E7D4;
+            border-radius: 2rem;
+            transform: scale(1);
 
-            transition: color 0.5s, background-color 0.5s, border 0.5s;
+            transition: background-color 0.3s, border 0.3s, transform 0.3s;
         }
 
         // L'effet hover des boutons de sessions
         .session1:hover, .session2:hover, .session3:hover, .session4:hover, .session5:hover, .session6:hover {
             background-color: #2274A5;
-            border: 1px solid #2274A5;
-            color: #030027;
+            border: 2px solid #2274A5;
+            transform: scale(1.1);
         }
     }
 
@@ -71,7 +74,7 @@
         // Contenant pour un cours
         .article {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: column;
             border: 1px solid #C4E7D4;
             padding: 0rem 1rem 0.5rem 1rem;
@@ -126,7 +129,7 @@
                 justify-content: center;
                 align-items: center;
                 margin: 0.3rem 5rem;
-                //padding: 1rem 0rem;
+                padding: 0rem 1rem;
                 flex-shrink: 0;
                 
                 background-color: #030027;
@@ -170,7 +173,7 @@
     .section-cours {
     
         .menu-cours {
-    
+
             .session1, .session2, .session3, .session4, .session5, .session6 {
                 padding: 0.5rem 1rem;
             }
@@ -199,13 +202,12 @@
     .section-cours {
 
         .menu-cours {
-            justify-content: center;
             padding: 0rem 0rem 1.5rem 0rem;
             column-gap: 0rem;
 
-            .session1, .session2, .session3, .session4, .session5, .session6 {
+            /*.session1, .session2, .session3, .session4, .session5, .session6 {
                 //font-size: large;
-            }
+            }*/
         }
 
         .contenu {
