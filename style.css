@@ -92,7 +92,6 @@
   align-items: center;
   margin: 0.3rem 5rem;
   padding: 0rem 1rem;
-  flex-shrink: 0;
   background-color: #030027;
   color: #C4E7D4;
   border: 1px solid #030027;
@@ -100,8 +99,9 @@
   transform: rotate(0deg);
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
-.section-cours .contenu .article .fleche-plus .material-symbols-rounded {
+.section-cours .contenu .article .fleche-plus span {
   font-size: 35px;
+  width: 100%;
   cursor: pointer;
 }
 .section-cours .contenu .article .fleche-plus:hover {
@@ -140,6 +140,7 @@
   .section-cours .menu-cours {
     padding: 0rem 0rem 1.5rem 0rem;
     column-gap: 0rem;
+    margin: 0rem 4rem;
     /*.session1, .session2, .session3, .session4, .session5, .session6 {
         //font-size: large;
     }*/
